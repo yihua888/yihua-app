@@ -1,0 +1,66 @@
+{
+  "user": [
+    {
+      "username": "yihua",
+      "password": "123456",
+      "id": 1,
+      "identity": "admin"
+    }
+  ],
+  "role": [
+    {
+      "identity": "admin",
+      "menu": [
+        {
+          "name": "main",
+          "url": "/main/dashboard",
+          "id": "1",
+          "type": 0,
+          "children": [
+            {
+              "url": "/main/dashboard",
+              "name": "首页",
+              "type": 2,
+              "id": "1-0",
+              "icon":"HomeFilled",
+              "children":[]
+            },
+            {
+              "url": "/main/cpnViews",
+              "name": "组件库",
+              "type": 2,
+              "id": "1-2",
+              "icon": "Reading",
+              "children": []
+            },
+            {
+              "url": "/main/system/role",
+              "name": "系统配置",
+              "id": "1-3",
+              "icon": "Tools",
+              "type": 1,
+              "children": [
+                {
+                  "url": "/main/system/role",
+                  "name": "权限管理",
+                  "type": 2,
+                  "id": "1-3-1",
+                  "icon": "Menu",
+                  "children": []
+                },
+                {
+                  "url": "/main/system/user",
+                  "name": "用户管理",
+                  "type": 2,
+                  "id": "1-3-2",
+                  "icon": "UserFilled",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
