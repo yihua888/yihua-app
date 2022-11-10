@@ -32,12 +32,6 @@ router.beforeEach((to) => {
       return "/login";
     }
   }
-
-  if (to.path === "/login") {
-    const token = getCache("token");
-    //  判断是否存在token
-    return "/main";
-  }
 });
 
 export default router;

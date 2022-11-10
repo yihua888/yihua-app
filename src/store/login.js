@@ -26,7 +26,6 @@ const loginModule = {
       state.userMenus = userMenus;
       // userMenus => routes
       const routes = mapMenusToRotes(userMenus);
-      console.log(routes);
       routes.forEach((route) => {
         router.addRoute("main", route);
       });

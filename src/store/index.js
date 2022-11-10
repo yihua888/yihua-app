@@ -1,6 +1,8 @@
 import { createStore } from 'vuex'
 
 import login from './login'
+import cpnModule from './cpnviews'
+import mycaseModule from './mycase'
 
 const store = createStore({
   state() {},
@@ -8,7 +10,10 @@ const store = createStore({
   getters: {},
   actions: {},
   modules: {
-  login}
+    cpnModule,
+    mycaseModule,
+    login
+  }
 })
 
 export function setupStore () {

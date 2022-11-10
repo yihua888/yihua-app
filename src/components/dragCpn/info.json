@@ -22,5 +22,6 @@
     "setCheckedKeys：设置当前组件哪些元素被选中；",
     "setShowChild：设置当前组件哪些元素应该被展开子元素。",
     "changeshowChild：改变当前组件某个节点的孩子是否展示。"
-  ]
+  ],
+  "blog":"https://blog.csdn.net/weixin_45737062/article/details/127512928?spm=1001.2014.3001.5501"
 }

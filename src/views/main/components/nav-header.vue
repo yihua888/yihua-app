@@ -39,7 +39,7 @@ const handleFoldClick = () => {
 }
 const handleExitClick = () => {
   deleteCache('token')
-  router.push('/main')
+  router.push('/login')
 }
 
 </script>

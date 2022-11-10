@@ -11,15 +11,25 @@ export function mapMenusToRotes(userMenus) {
   // 2.根据菜单获取需要添加的routes
   const recuresGetRote = (menus) => {
     for (const menu of menus) {
-      if (menu.type === 2) {
+      if(menu.type === 1){
+        recuresGetRote(menu.children);
+      }else{
         if (!firstMenu) {
           firstMenu = menu;
         }
         const route = allRoutes.find((route) => route.path === menu.url);
         if (route) routes.push(route);
-      } else {
-        recuresGetRote(menu.children);
+        if(menu.children && menu.children.length) recuresGetRote(menu.children);
       }
+      // if (menu.type === 2) {
+      //   if (!firstMenu) {
+      //     firstMenu = menu;
+      //   }
+      //   const route = allRoutes.find((route) => route.path === menu.url);
+      //   if (route) routes.push(route);
+      // } else {
+      //   recuresGetRote(menu.children);
+      // }
     }
   };
   recuresGetRote(userMenus);

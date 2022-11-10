@@ -31,7 +31,15 @@
               "type": 2,
               "id": "1-2",
               "icon": "Reading",
-              "children": []
+              "children": [
+                {
+                  "url": "/main/cpninfo",
+                  "name": "组件库详情",
+                  "id": "1-2-1",
+                  "type": 3,
+                  "children":[]
+                }
+              ]
             },
             {
               "url": "/main/system/role",
@@ -59,12 +67,20 @@
               ]
             },
             {
-              "url": "/main/case",
+              "url": "/main/mycase",
               "name": "案例",
               "type": 2,
               "id": "1-4",
               "icon":"HomeFilled",
-              "children":[]
+              "children":[
+                {
+                  "url": "/main/caseinfo",
+                  "name": "案例详情",
+                  "id": "1-4-1",
+                  "type": 3,
+                  "children": []
+                }
+              ]
             }
           ]
         }
