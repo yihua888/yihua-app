@@ -1,0 +1,13 @@
+{
+  "attr": [
+    "prefix：前缀名",
+    "name：icon名字；",
+    "color：颜色；",
+    "size：大小；",
+    "gradientColor：渐变色；",
+    "gradientAngle：渐变角度",
+    "svgId：svgId，辅助渐变色使用"
+  ],
+  "info": "svgIcon使用组件",
+  "methods": []
+}

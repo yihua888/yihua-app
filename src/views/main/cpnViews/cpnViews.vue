@@ -1,5 +1,6 @@
 <template>
   <div class="content">
+    <h2>组件库</h2>
     <el-table :data="cpnList" border>
       <el-table-column type="index" width="50" />
       <el-table-column prop="label" label="名称" />
@@ -15,7 +16,7 @@
         <div class="left">
           <div class="f-bold">组件示例：</div>
           <div class="center">
-            <component :is="cpnInfo.name"></component>
+            <component :is="cpnInfo.cpn"></component>
           </div>
         </div>
         <div class="right">
@@ -35,12 +36,15 @@
 
 <script setup>
 import { ref } from 'vue'
-import dragCpn from '/src/components/dragCpn/test.vue'
+import dragcpn from '/src/components/dragCpn/test.vue'
 import dragCpnInfo from '/src/components/dragCpn/info.json'
+import svgicon from '/src/components/svgIcon/test.vue'
+import svgIconInfo from '/src/components/svgIcon/info.json'
 
 const eventAligin = 'center'
 const cpnList = [
-  { name: 'dragCpn', id: 1, label: '可拖拽树形组件', info: dragCpnInfo }
+  { name: 'dragcpn', id: 1, label: '可拖拽树形组件', info: dragCpnInfo , cpn:dragcpn },
+  { name: 'svgicon', id: 2, label: 'svg组件', info: svgIconInfo ,  cpn:svgicon}
 ]
 
 const cpnInfo = ref({})

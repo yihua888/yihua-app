@@ -53,10 +53,18 @@
                   "name": "用户管理",
                   "type": 2,
                   "id": "1-3-2",
-                  "icon": "UserFilled",
+                  "icon": "Connection",
                   "children": []
                 }
               ]
+            },
+            {
+              "url": "/main/case",
+              "name": "案例",
+              "type": 2,
+              "id": "1-4",
+              "icon":"HomeFilled",
+              "children":[]
             }
           ]
         }
