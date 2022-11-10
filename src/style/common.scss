@@ -6,3 +6,23 @@ body,
 .app {
     height: 100%;
 }
+
+.f-bold{
+    font-weight: bold;
+}
+
+.f-base{
+    font-size: $fbase;
+}
+
+.f-big{
+    font-size: $fbig;
+}
+
+.f-small{
+    font-size: $fsmall;
+}
+
+.ml24{
+    margin-left: 24px;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_interaction</title>
+    <g id="v2.0.8" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-192.000000, -192.000000)">
+            <g id="icon_interaction" transform="translate(192.000000, 192.000000)">
+                <rect id="bg" fill="#FFBB33" x="0" y="0" width="16" height="16"></rect>
+                <g id="闪电" transform="translate(4.000000, 2.000000)" fill="#FFFFFF">
+                    <polygon id="矩形" points="5 -2.83661983e-14 5 7 -7.09154957e-14 7"></polygon>
+                    <polygon id="矩形备份" transform="translate(5.500000, 8.500000) scale(-1, -1) translate(-5.500000, -8.500000) " points="8 5 8 12 3 12"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -8,6 +8,11 @@ const routes = [
     component: () => import("@/views/login/index.vue"),
   },
   {
+    path: "/",
+    name: "main",
+    component: () => import("@/views/main/index.vue"),
+  },
+  {
     path: "/main",
     name: "main",
     component: () => import("@/views/main/index.vue"),
@@ -33,7 +38,6 @@ router.beforeEach((to) => {
     //  判断是否存在token
     return "/main";
   }
-
 });
 
 export default router;

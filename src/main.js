@@ -12,6 +12,9 @@ import store from './store'
 
 import { setupStore } from './store'
 
+// svg处理
+import 'virtual:svg-icons-register'
+
 const app = createApp(App)
 
 // 注册element-plus/其他
