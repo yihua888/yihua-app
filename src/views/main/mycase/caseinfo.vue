@@ -3,8 +3,7 @@
     <div class="top">
       <span>{{ cpnInfo.name}}</span>
       <span>
-        <el-button :icon="ArrowLeft"
-                   type="primary"
+        <el-button type="primary"
                    size="small"
                    @click="goback">返回</el-button>
       </span>
@@ -19,9 +18,18 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex';
 import router from '@/router'
+import { getCache } from "@/utils/cache";
 
 const store = useStore()
-const cpnInfo = computed(() => store.state.mycaseModule.caseinfo)
+const cpnInfo = computed(() => {
+  let info = store.state.mycaseModule.caseinfo
+  if (!info.name) {
+    info = getCache("caseinfo")
+    store.commit('mycaseModule/changeCaseinfo', info)
+  }
+  return info
+})
+
 const goback = () => router.go(-1)
 </script>
 

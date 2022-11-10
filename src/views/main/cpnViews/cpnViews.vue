@@ -7,7 +7,7 @@
       <el-table-column prop="name" label="type" />
       <el-table-column label="操作" :align="eventAligin">
         <template #default="{ row }">
-          <el-button type="primary" @click="showCpn(row)">查看</el-button>
+          <el-button  v-if="isOpration('viewCpn')" type="primary" @click="showCpn(row)">查看</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -21,6 +21,7 @@ import svgicon from '/src/components/svgIcon/test.vue'
 import svgIconInfo from '/src/components/svgIcon/info.json'
 import { useStore } from 'vuex'
 import router from "@/router";
+import { isOpration } from '@/hooks/useOpration'
 
 const eventAligin = 'center'
 const cpnList = [

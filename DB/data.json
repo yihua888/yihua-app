@@ -38,6 +38,10 @@
                   "id": "1-2-1",
                   "type": 3,
                   "children":[]
+                },
+                {
+                  "type": "operation",
+                  "name": "viewCpn"
                 }
               ]
             },
@@ -79,6 +83,10 @@
                   "id": "1-4-1",
                   "type": 3,
                   "children": []
+                },
+                {
+                  "type":"operation",
+                  "name":"viewCase"
                 }
               ]
             }

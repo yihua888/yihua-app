@@ -12,6 +12,7 @@ const loginModule = {
       token: "",
       userInfo: {},
       userMenus: [],
+      operation:[]
     };
   },
   getters: {},
@@ -22,10 +23,17 @@ const loginModule = {
     changeUserInfo(state, userInfo) {
       state.userInfo = userInfo;
     },
+    changeOperation(state, operation) {
+      state.operation = operation;
+    },
     changeUserMenus(state, userMenus) {
       state.userMenus = userMenus;
       // userMenus => routes
-      const routes = mapMenusToRotes(userMenus);
+      const role = mapMenusToRotes(userMenus)
+      const routes = role.routes;
+      const operation = role.operation;
+      state.operation = operation
+      setCache("operation", operation);
       routes.forEach((route) => {
         router.addRoute("main", route);
       });

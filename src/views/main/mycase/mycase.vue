@@ -6,7 +6,7 @@
       <el-table-column prop="name" label="名称" />
       <el-table-column label="操作" :align="eventAligin">
         <template #default="{ row }">
-          <el-button type="primary" @click="showCpn(row)">查看</el-button>
+          <el-button type="primary" @click="showCpn(row)" v-if="isOpration('viewCase')">查看</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -16,6 +16,7 @@
 <script setup>
 import goDB from '/src/storage/goDB/index.vue'
 import indexedDB from '/src/storage/indexedDB/index.vue'
+import { isOpration } from '@/hooks/useOpration'
 import { useStore } from 'vuex'
 import router from "@/router";
 

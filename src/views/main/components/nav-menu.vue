@@ -49,7 +49,6 @@ const prop = defineProps({
 const collapse = computed(()=>prop.collapse)
 const store = useStore()
 const userMenus = computed(() => store.state.login.userMenus)
-console.log(userMenus.value);
 const router = useRouter()
 const route = useRoute()
 const currentPath = route.path

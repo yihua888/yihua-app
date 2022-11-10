@@ -1,7 +1,7 @@
 <template>
   <div class="cpn-info">
     <div class="top">
-      <el-button :icon="ArrowLeft"  type="primary" size="small" @click="goback">返回</el-button>
+      <el-button   type="primary" size="small" @click="goback">返回</el-button>
     </div>
     <div class="cpn-content">
       <div>
@@ -46,9 +46,17 @@
 import { computed } from 'vue'
 import { useStore } from 'vuex';
 import router from '@/router'
+import { getCache } from "@/utils/cache";
 
 const store = useStore()
-const cpnInfo = computed(() => store.state.cpnModule.cpnInfo)
+const cpnInfo = computed(() => {
+  let info = store.state.cpnModule.cpnInfo
+  if(!info.name){
+    info = getCache("cpnInfo")
+    store.commit('cpnModule/changeCpnInfo',info)
+  }
+  return info
+})
 const goback = () => router.go(-1)
 </script>
 

@@ -1,3 +1,4 @@
+import { getCache, setCache } from '@/utils/cache'
 const cpnModule = {
   namespaced: true,
   state() {
@@ -9,6 +10,7 @@ const cpnModule = {
   mutations: {
     changeCpnInfo(state, info) {
       state.cpnInfo = info
+      setCache('cpnInfo', info)
     }
   },
   actions: {}

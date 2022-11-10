@@ -1,3 +1,4 @@
+import { getCache, setCache } from '@/utils/cache'
 const mycaseModule = {
   namespaced: true,
   state() {
@@ -9,6 +10,7 @@ const mycaseModule = {
   mutations: {
     changeCaseinfo(state, info) {
       state.caseinfo = info
+      setCache('caseinfo', info)
     }
   },
   actions: {}

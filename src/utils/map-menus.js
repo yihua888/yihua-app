@@ -1,6 +1,7 @@
 let firstMenu = "";
 export function mapMenusToRotes(userMenus) {
   const routes = [];
+  const operation = []
   // 1.先去加载默认所以的routes
   const allRoutes = [];
   const routeFiles = import.meta.globEager('@/router/main/**/*.js');
@@ -13,6 +14,8 @@ export function mapMenusToRotes(userMenus) {
     for (const menu of menus) {
       if(menu.type === 1){
         recuresGetRote(menu.children);
+      }else if(menu.type === "operation"){
+        operation.push(menu.name)
       }else{
         if (!firstMenu) {
           firstMenu = menu;
@@ -21,20 +24,14 @@ export function mapMenusToRotes(userMenus) {
         if (route) routes.push(route);
         if(menu.children && menu.children.length) recuresGetRote(menu.children);
       }
-      // if (menu.type === 2) {
-      //   if (!firstMenu) {
-      //     firstMenu = menu;
-      //   }
-      //   const route = allRoutes.find((route) => route.path === menu.url);
-      //   if (route) routes.push(route);
-      // } else {
-      //   recuresGetRote(menu.children);
-      // }
     }
   };
   recuresGetRote(userMenus);
 
-  return routes;
+  return {
+    routes,
+    operation
+  };
 }
 
 export function pathMapBreadcrumbs(userMenus, currentPath) {
