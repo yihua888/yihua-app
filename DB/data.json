@@ -89,6 +89,30 @@
                   "name":"viewCase"
                 }
               ]
+            },
+            {
+              "url": "/main/myutils",
+              "name": "工具",
+              "type": 2,
+              "id": "1-5",
+              "icon":"MessageBox",
+              "children":[
+                {
+                  "url": "/main/utilsInfo",
+                  "name": "工具使用",
+                  "id": "1-4-2",
+                  "type": 3,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "url": "/main/algorithm",
+              "name": "算法",
+              "type": 2,
+              "id": "1-6",
+              "icon":"Notebook",
+              "children":[]
             }
           ]
         }

@@ -1,0 +1,13 @@
+{
+  "attr": [
+    "width：input宽度；",
+    "height：input高度；",
+    "maxTag：最多标签个数；",
+    "labelName：默认标签；逗号分隔。"
+  ],
+  "info": "input里面生成标签",
+  "methods": [
+    "saveTag：获取标签对应的字符串。"
+  ],
+  "blog": "https://blog.csdn.net/weixin_45737062/article/details/120873806?spm=1001.2014.3001.5501"
+}

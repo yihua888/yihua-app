@@ -6,7 +6,7 @@
       <el-table-column prop="name" label="名称" />
       <el-table-column label="操作" :align="eventAligin">
         <template #default="{ row }">
-          <el-button type="primary" @click="showCpn(row)" v-if="isOpration('viewCase')">查看</el-button>
+          <el-button type="primary" @click="showCase(row)" v-if="isOpration('viewCase')">查看</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -28,7 +28,7 @@ const cpnList = [
 
 const store = useStore()
 
-const showCpn = (row) => {
+const showCase = (row) => {
   store.commit('mycaseModule/changeCaseinfo',row)
   router.push('/main/caseinfo')
 }

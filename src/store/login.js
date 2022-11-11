@@ -34,6 +34,7 @@ const loginModule = {
       const operation = role.operation;
       state.operation = operation
       setCache("operation", operation);
+      console.log(routes);
       routes.forEach((route) => {
         router.addRoute("main", route);
       });

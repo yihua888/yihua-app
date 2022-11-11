@@ -19,6 +19,8 @@ import dragcpn from '/src/components/dragCpn/test.vue'
 import dragCpnInfo from '/src/components/dragCpn/info.json'
 import svgicon from '/src/components/svgIcon/test.vue'
 import svgIconInfo from '/src/components/svgIcon/info.json'
+import labelInput from '/src/components/labelInput/test.vue'
+import labelInputInfo from '/src/components/labelInput/info.json'
 import { useStore } from 'vuex'
 import router from "@/router";
 import { isOpration } from '@/hooks/useOpration'
@@ -26,7 +28,8 @@ import { isOpration } from '@/hooks/useOpration'
 const eventAligin = 'center'
 const cpnList = [
   { name: 'dragcpn', id: 1, label: '可拖拽树形组件', info: dragCpnInfo , cpn:dragcpn },
-  { name: 'svgicon', id: 2, label: 'svg组件', info: svgIconInfo ,  cpn:svgicon}
+  { name: 'svgicon', id: 2, label: 'svg组件', info: svgIconInfo ,  cpn:svgicon},
+  { name: 'labelInput', id: 3, label: 'input标签组件', info: labelInputInfo ,  cpn:labelInput}
 ]
 
 const store = useStore()
