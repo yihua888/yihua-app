@@ -3,20 +3,24 @@
         <div class="top">
             <span>{{ nodeCodeInfo.name }}</span>
             <span>
-                <el-button type="primary" size="small" @click="goback">返回</el-button>
+                <el-button type="success" :icon="CopyDocument" circle  @click="copyCode" />
+                <el-button size="small" @click="goback">返回</el-button>
             </span>
         </div>
         <div class="code-content">
-            <el-input type="textarea" clearable class="json-box" v-model="nodeCodeInfo.info.codeStr" />
+            <codeMirror :code="nodeCodeInfo.info.codeStr" :height="700"></codeMirror>
         </div>
     </div>
 </template>
 
 <script setup>
+import codeMirror from '@/components/codeMirror/index.vue'
 import { computed } from 'vue'
 import { useStore } from 'vuex';
 import router from '@/router'
 import { getCache } from "@/utils/cache";
+import {CopyDocument} from '@element-plus/icons-vue'
+import { ElMessage } from "element-plus";
 
 const store = useStore()
 const nodeCodeInfo = computed(() => {
@@ -29,6 +33,17 @@ const nodeCodeInfo = computed(() => {
 })
 
 const goback = () => router.go(-1)
+
+const copyCode = () => {
+    const data = nodeCodeInfo.value.info.codeStr
+    let inputElement = document.createElement("input");
+    inputElement.value = data;
+    document.body.appendChild(inputElement);
+    inputElement.select(); //选中文本
+    document.execCommand("copy"); //执行浏览器复制命令
+    inputElement.remove();
+    ElMessage.success("复制成功");
+};
 </script>
 
   
@@ -58,4 +73,5 @@ const goback = () => router.go(-1)
     height: 600px;
     margin-bottom: 24px;
 }
+
 </style>

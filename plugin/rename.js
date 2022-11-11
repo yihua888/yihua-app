@@ -18,9 +18,7 @@ export default {
     };
     
     walkSync("文件夹", (filePath, stat, index) => {
-      const arr = filePath.split("\\");
-      const oldName = arr[arr.length - 1];
-      const newName = filePath.replace(oldName, index + "_" + oldName);
+      const newName = "newName"+ index;
       fs.rename(filePath, newName, (err) => {
         console.log(err);
       });

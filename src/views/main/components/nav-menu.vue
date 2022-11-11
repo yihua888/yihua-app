@@ -37,7 +37,6 @@ import { computed, defineProps, ref } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter, useRoute } from 'vue-router'
 import { pathMapToMenu } from '@/utils/map-menus'
-// import {} from 'element-plus/icons-vue'
 
 const prop = defineProps({
     collapse: {
