@@ -22,8 +22,8 @@
               "name": "首页",
               "type": 2,
               "id": "1-0",
-              "icon":"HomeFilled",
-              "children":[]
+              "icon": "HomeFilled",
+              "children": []
             },
             {
               "url": "/main/cpnViews",
@@ -37,7 +37,7 @@
                   "name": "组件库详情",
                   "id": "1-2-1",
                   "type": 3,
-                  "children":[]
+                  "children": []
                 },
                 {
                   "type": "operation",
@@ -75,8 +75,8 @@
               "name": "案例",
               "type": 2,
               "id": "1-4",
-              "icon":"HomeFilled",
-              "children":[
+              "icon": "HomeFilled",
+              "children": [
                 {
                   "url": "/main/caseinfo",
                   "name": "案例详情",
@@ -85,8 +85,8 @@
                   "children": []
                 },
                 {
-                  "type":"operation",
-                  "name":"viewCase"
+                  "type": "operation",
+                  "name": "viewCase"
                 }
               ]
             },
@@ -95,8 +95,8 @@
               "name": "工具",
               "type": 2,
               "id": "1-5",
-              "icon":"MessageBox",
-              "children":[
+              "icon": "MessageBox",
+              "children": [
                 {
                   "url": "/main/utilsInfo",
                   "name": "工具使用",
@@ -111,8 +111,23 @@
               "name": "算法",
               "type": 2,
               "id": "1-6",
-              "icon":"Notebook",
-              "children":[]
+              "icon": "Notebook",
+              "children": []
+            },
+            {
+              "url": "/main/nodePlugin",
+              "name": "node",
+              "type": 2,
+              "id": "1-7",
+              "icon": "Briefcase",
+              "children": [
+                {
+                  "url": "/main/codeInfo",
+                  "name": "codeInfo",
+                  "type": 3,
+                  "id": "1-7-1"
+                }
+              ]
             }
           ]
         }

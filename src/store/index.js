@@ -4,6 +4,7 @@ import login from './login'
 import cpnModule from './cpnviews'
 import mycaseModule from './mycase'
 import myutilsModule from './myutils'
+import nodeCodeModule from './nodeCodeInfo'
 
 const store = createStore({
   state() {},
@@ -14,6 +15,7 @@ const store = createStore({
     cpnModule,
     mycaseModule,
     myutilsModule,
+    nodeCodeModule,
     login
   }
 })
