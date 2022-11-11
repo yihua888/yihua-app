@@ -37,10 +37,8 @@ const changeFile = (e: any) => {
     ElMessage.error("只能选择excel文件导入");
     return false;
   }
-
   const reader = new FileReader();
-
-  reader.readAsText(file, "UTF-8");
+  reader.readAsBinaryString(file);
   reader.onload = (ev: any) => {
     const data = ev.currentTarget.result;
     let xlsxs = XLSX.read(data, { type: "binary" });
