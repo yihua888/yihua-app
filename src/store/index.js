@@ -3,6 +3,7 @@ import { createStore } from 'vuex'
 import login from './login'
 import cpnModule from './cpnviews'
 import mycaseModule from './mycase'
+import myutilsModule from './myutils'
 
 const store = createStore({
   state() {},
@@ -12,6 +13,7 @@ const store = createStore({
   modules: {
     cpnModule,
     mycaseModule,
+    myutilsModule,
     login
   }
 })

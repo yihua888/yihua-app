@@ -14,19 +14,21 @@
 </template>
   
 <script setup>
-// import { useStore } from 'vuex'
+import { useStore } from 'vuex'
 import router from "@/router";
 import jsonToExcel from '@/myutilscase/jsonToExcel/index.vue'
+import ExcelToJson from '@/myutilscase/ExcelToJson/index.vue'
 
 const eventAligin = 'center'
 const utilsList = [
-    { id: 1, name: 'json转excel', cpn: jsonToExcel }
+    { id: 1, name: 'json转excel', cpn: jsonToExcel },
+    { id: 2, name: 'excel转json', cpn: ExcelToJson }
 ]
 
-// const store = useStore()
+const store = useStore()
 
 const showUtils = (row) => {
-    // store.commit('mycaseModule/changeCaseinfo',row)
+    store.commit('myutilsModule/changeUtilsinfo',row)
     router.push('/main/utilsInfo')
 }
 </script>

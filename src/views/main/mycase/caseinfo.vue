@@ -1,7 +1,7 @@
 <template>
   <div class="case-info">
     <div class="top">
-      <span>{{ cpnInfo.name}}</span>
+      <span>{{ caseinfo.name}}</span>
       <span>
         <el-button type="primary"
                    size="small"
@@ -9,7 +9,7 @@
       </span>
     </div>
     <div class="case-content">
-      <component :is="cpnInfo.cpn"></component>
+      <component :is="caseinfo.cpn"></component>
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@ import router from '@/router'
 import { getCache } from "@/utils/cache";
 
 const store = useStore()
-const cpnInfo = computed(() => {
+const caseinfo = computed(() => {
   let info = store.state.mycaseModule.caseinfo
   if (!info.name) {
     info = getCache("caseinfo")
