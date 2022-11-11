@@ -44,9 +44,8 @@ const foldChange = (isFold) => {
 
 .page-content {
     height: calc(100% - 48px);
-
     .page-info {
-        background-color: #fff;
+        background: #FFF;
         border-radius: 5px;
         padding: 24px;
         height: calc(100% - 48px);
