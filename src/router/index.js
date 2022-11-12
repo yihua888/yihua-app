@@ -9,8 +9,7 @@ const routes = [
   },
   {
     path: "/",
-    name: "main",
-    component: () => import("@/views/main/index.vue"),
+    redirct: "/main" 
   },
   {
     path: "/main",
