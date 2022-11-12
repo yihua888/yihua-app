@@ -1,41 +1,26 @@
 <template>
-  <div class="content">
-    <h2>组件库</h2>
-    <el-table :data="cpnList" border>
-      <el-table-column type="index" width="50" />
-      <el-table-column prop="label" label="名称" />
-      <el-table-column prop="name" label="type" />
-      <el-table-column label="操作" :align="eventAligin">
-        <template #default="{ row }">
-          <el-button  v-if="isOpration('viewCpn')" type="primary" @click="showCpn(row)">查看</el-button>
-        </template>
-      </el-table-column>
-    </el-table>
-  </div>
+  <basePage v-bind="config" :tableData="cpnList">
+    <template #handler="{ row }">
+      <el-button v-if="isOpration('viewCpn')"  @click="showCpn(row)">查看</el-button>
+    </template>
+  </basePage>
 </template>
 
 <script setup>
-import dragcpn from '/src/components/dragCpn/test.vue'
-import dragCpnInfo from '/src/components/dragCpn/info.json'
-import svgicon from '/src/components/svgIcon/test.vue'
-import svgIconInfo from '/src/components/svgIcon/info.json'
-import labelInput from '/src/components/labelInput/test.vue'
-import labelInputInfo from '/src/components/labelInput/info.json'
+import { ref } from 'vue'
 import { useStore } from 'vuex'
 import router from "@/router";
+import basePage from '@/highCpn/basePage/index.vue'
+import  cpns from '@/components/index.js'
 import { isOpration } from '@/hooks/useOpration'
+import config from './cpnViews.config'
 
-const eventAligin = 'center'
-const cpnList = [
-  { name: 'dragcpn', id: 1, label: '可拖拽树形组件', info: dragCpnInfo , cpn:dragcpn },
-  { name: 'svgicon', id: 2, label: 'svg组件', info: svgIconInfo ,  cpn:svgicon},
-  { name: 'labelInput', id: 3, label: 'input标签组件', info: labelInputInfo ,  cpn:labelInput}
-]
+const cpnList = ref(cpns)
 
 const store = useStore()
 
 const showCpn = (row) => {
-  store.commit('cpnModule/changeCpnInfo',row)
+  store.commit('cpnModule/changeCpnInfo', row)
   router.push('/main/cpninfo')
 }
 </script>

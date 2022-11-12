@@ -1,12 +1,14 @@
 {
+  "name": "yhSvgIcon",
+  "label": "svgIcon",
   "attr": [
-    "prefix：前缀名",
-    "name：icon名字；",
-    "color：颜色；",
-    "tags：默认标签；",
-    "gradientColor：渐变色；",
-    "gradientAngle：渐变角度",
-    "svgId：svgId，辅助渐变色使用"
+    "prefix：（字符串，默认值：'icon'）前缀名",
+    "name：（字符串，必填）icon名字；",
+    "color：（字符串，默认值：#333）颜色；",
+    "size：（字符串，默认值：'1em'）树图标的大小；",
+    "gradientColor：（字符串，默认值：''）渐变色；",
+    "gradientAngle：字符串，默认值：''）渐变角度",
+    "svgId：字符串，默认值：''）svgId，辅助渐变色使用"
   ],
   "info": "svgIcon使用组件",
   "methods": [],

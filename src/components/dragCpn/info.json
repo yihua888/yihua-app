@@ -1,13 +1,15 @@
 {
+  "name": "yhDragCpn",
+  "label": "可拖拽树形组件",
   "attr": [
-    "itemStyle：单个item项的样式，更推荐使用类名drag-item去更改基本样式。被选中的会被添加active类名；",
-    "data：数据，注意需要有id；",
-    "iconSize：树形节点图标的大小；",
-    "iconColor：树形节点图标的颜色；",
-    "select：默认选中的数据；",
-    "dragCheck：拖拽进入为子组件的触控区域；",
-    "styleId：悬浮的id,悬浮的item会增加类名self_style；",
-    "isdbCancel：是否按两下取消选中。"
+    "itemStyle：（对象，默认值：{}）单个item项的样式，更推荐使用类名drag-item去更改基本样式。被选中的会被添加active类名；",
+    "data：（数组）数据，默认值：[]）注意需要有id；",
+    "iconSize：（数字，默认值：14）树形节点图标的大小；",
+    "iconColor：（字符串，默认值：#FFFFFF）树形节点图标的颜色；",
+    "select：（数组，默认值：[]）默认选中的数据；",
+    "dragCheck：（数字，默认值：20）拖拽进入为子组件的触控区域；",
+    "styleId：（字符串，默认值：''）悬浮的id,悬浮的item会增加类名self_style；",
+    "isdbCancel：（布尔值，默认值：false）是否按两下取消选中。"
   ],
   "info": "树形可拖拽组件，单击可选中，shift+单击可选中一片区域，ctrl+单击多选。内容在插槽中自定义。",
   "methods": [
@@ -22,6 +24,9 @@
     "setCheckedKeys：设置当前组件哪些元素被选中；",
     "setShowChild：设置当前组件哪些元素应该被展开子元素。",
     "changeshowChild：改变当前组件某个节点的孩子是否展示。"
+  ],
+  "slots":[
+   "content：参数是当前节点的数据。"
   ],
   "blog":"https://blog.csdn.net/weixin_45737062/article/details/127512928?spm=1001.2014.3001.5501"
 }

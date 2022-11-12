@@ -1,6 +1,6 @@
 <template>
   <div class="yh-label-input"
-       :style="{ height: height, width: width }"
+       :style="{ height: `${height}px`, width: `${width}px` }"
        @click="clickInput">
     <div class="yh-tag-box"
          ref="tagBox">
@@ -25,12 +25,12 @@ import { ElMessage } from "element-plus";
 
 const props = defineProps({
     width: {
-      default: () => '100px',
-      type: String
+      default: () => 100,
+      type: Number
     },
     height: {
-      default: () => '40px',
-      type: String
+      default: () => 40,
+      type: Number
     },
     maxTag: {
       default: () => 50,

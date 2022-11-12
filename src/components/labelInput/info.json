@@ -1,13 +1,16 @@
 {
+  "name": "yhLabelInput",
+  "label": "标签输入框",
   "attr": [
-    "width：input宽度；",
-    "height：input高度；",
-    "maxTag：最多标签个数；",
-    "labelName：默认标签；逗号分隔。"
+    "width：（数字，默认值：100）input宽度；",
+    "height：（数字，默认值：40）input高度；",
+    "maxTag：（数字，默认值：50）最多标签个数；",
+    "labelName：（字符串，默认值：''）默认标签；逗号分隔。"
   ],
   "info": "input里面生成标签",
   "methods": [
     "saveTag：获取标签对应的字符串。"
   ],
+  "slots":[],
   "blog": "https://blog.csdn.net/weixin_45737062/article/details/120873806?spm=1001.2014.3001.5501"
 }

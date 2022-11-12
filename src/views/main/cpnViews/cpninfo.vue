@@ -7,7 +7,7 @@
       <div>
         <div class="f-bold">组件示例：</div>
         <div class="center">
-          <component :is="cpnInfo.cpn"></component>
+          <component :is="cpnInstance"></component>
         </div>
       </div>
       <div>
@@ -15,26 +15,32 @@
           <div class="f-bold info-text">组件名称：</div>
           <div class="ml24">{{ cpnInfo.label }}</div>
         </div>
-        <div v-if="cpnInfo.info.blog">
+        <div v-if="cpnInfo.blog">
           <div class="f-bold info-text">博客地址：</div>
           <div class="ml24">
-            <a :href="cpnInfo.info.blog" target="_blank">{{cpnInfo.label}}</a>
+            <a :href="cpnInfo.blog" target="_blank">{{cpnInfo.label}}</a>
           </div>
         </div>
-        <div v-if="cpnInfo.info.info ">
+        <div v-if="cpnInfo.info ">
           <div class="f-bold info-text">组件介绍：</div>
-          <div class="ml24">{{ cpnInfo.info.info }}</div>
+          <div class="ml24">{{ cpnInfo.info }}</div>
         </div>
-        <div v-if="cpnInfo.info.attr && cpnInfo.info.attr.length">
+        <div v-if="cpnInfo.attr && cpnInfo.attr.length">
           <div class="f-bold info-text">组件属性：</div>
           <li class="ml24"
-              v-for="item in cpnInfo.info.attr"
+              v-for="item in cpnInfo.attr"
               :key="item">{{ item }}</li>
         </div>
-        <div v-if="cpnInfo.info.methods && cpnInfo.info.methods.length">
+        <div v-if="cpnInfo.methods && cpnInfo.methods.length">
           <div class="f-bold info-text">组件方法：</div>
           <li class="ml24"
-              v-for="item in cpnInfo.info.methods"
+              v-for="item in cpnInfo.methods"
+              :key="item">{{ item }}</li>
+        </div>
+         <div v-if="cpnInfo.slots && cpnInfo.slots.length">
+          <div class="f-bold info-text">插槽：</div>
+          <li class="ml24"
+              v-for="item in cpnInfo.slots"
               :key="item">{{ item }}</li>
         </div>
       </div>
@@ -43,11 +49,12 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed , defineAsyncComponent , ref} from 'vue'
 import { useStore } from 'vuex';
 import router from '@/router'
 import { getCache } from "@/utils/cache";
 
+const cpnInstance = ref('')
 const store = useStore()
 const cpnInfo = computed(() => {
   let info = store.state.cpnModule.cpnInfo
@@ -55,8 +62,10 @@ const cpnInfo = computed(() => {
     info = getCache("cpnInfo")
     store.commit('cpnModule/changeCpnInfo',info)
   }
+  cpnInstance.value = defineAsyncComponent(()=>import(cpnInfo.value.cpnUrl))
   return info
 })
+
 const goback = () => router.go(-1)
 </script>
 

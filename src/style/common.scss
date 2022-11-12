@@ -70,3 +70,17 @@ a:active {
 a:focus {
 	text-decoration: none;
 }
+
+
+// =========================> 页面基本样式
+.page-box{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .content{
+        flex: 1;
+        overflow-y: auto;
+    }
+ 
+}

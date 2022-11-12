@@ -1,7 +1,10 @@
 <template>
-    <div class="content">
-        <h2>工具</h2>
-        <el-table :data="nodeStrArr" border>
+    <div class="page-box">
+        <div class="top">
+            <h2>工具</h2>
+        </div>
+        <div class="content">
+             <el-table :data="nodeStrArr" border>
             <el-table-column type="index" width="50" />
             <el-table-column prop="name" label="名称" />
             <el-table-column prop="info" label="介绍">
@@ -17,6 +20,7 @@
                 </template>
             </el-table-column>
         </el-table>
+        </div>
     </div>
 </template>
 

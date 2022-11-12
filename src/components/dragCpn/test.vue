@@ -46,15 +46,11 @@ const selectJson = ref('')
 
 const getSelect = () => selectJson.value = JSON.stringify(dragRef.value.getSelectedList());
 
-const dragEnd = (e, v) => {
-    // console.log(e, v);
-}
+const dragEnd = (e, v) => {}
 
 const selectItems = (v) => console.log(v);
 
-const hoverItem = (e, v) => {
-    // console.log(e, v)
-}
+const hoverItem = (e, v) => {}
 
 </script>
 
