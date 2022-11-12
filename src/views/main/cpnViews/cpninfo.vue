@@ -62,7 +62,7 @@ const cpnInfo = computed(() => {
     info = getCache("cpnInfo")
     store.commit('cpnModule/changeCpnInfo',info)
   }
-  cpnInstance.value = defineAsyncComponent(()=>import(cpnInfo.value.cpnUrl))
+  cpnInstance.value = defineAsyncComponent(()=>import(info.cpnUrl))
   return info
 })
 

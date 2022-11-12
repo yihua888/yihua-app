@@ -9,24 +9,27 @@
       </span>
     </div>
     <div class="case-content">
-      <component :is="caseinfo.cpn"></component>
+      <component :is="cpnInstance"></component>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed , defineAsyncComponent , ref} from 'vue'
 import { useStore } from 'vuex';
 import router from '@/router'
 import { getCache } from "@/utils/cache";
 
 const store = useStore()
+const cpnInstance = ref('')
+
 const caseinfo = computed(() => {
   let info = store.state.mycaseModule.caseinfo
   if (!info.name) {
     info = getCache("caseinfo")
     store.commit('mycaseModule/changeCaseinfo', info)
   }
+  cpnInstance.value = defineAsyncComponent(()=>import(info.caseCode))
   return info
 })
 

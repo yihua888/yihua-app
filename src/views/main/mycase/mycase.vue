@@ -1,37 +1,20 @@
 <template>
-  <div class="page-box">
-    <div class="top">
-      <h2>案例</h2>
-    </div>
-    <div class="content">
-      <el-table :data="cpnList" border>
-        <el-table-column type="index" width="50" />
-        <el-table-column prop="name" label="名称" />
-        <el-table-column label="操作" :align="eventAligin">
-          <template #default="{ row }">
-            <el-button type="primary" @click="showCase(row)" v-if="isOpration('viewCase')">查看</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
-    </div>
-  </div>
+   <basePage v-bind="config" :tableData="caselist">
+    <template #handler="{ row }">
+     <el-button @click="showCase(row)" v-if="isOpration('viewCase')">查看</el-button>
+    </template>
+  </basePage>
 </template>
 
 <script setup>
-import goDB from '/src/storage/goDB/index.vue'
-import indexedDB from '/src/storage/indexedDB/index.vue'
-import { isOpration } from '@/hooks/useOpration'
 import { useStore } from 'vuex'
 import router from "@/router";
-
-const eventAligin = 'center'
-const cpnList = [
-  // {  id: 1, name: '原生indexedDB',  cpn:indexedDB },
-  { id: 2, name: 'goDB', cpn: goDB }
-]
+import { isOpration } from '@/hooks/useOpration'
+import basePage from '@/highCpn/basePage/index.vue'
+import caselist from '@/case/info.json'
+import config from  './mycase.config'
 
 const store = useStore()
-
 const showCase = (row) => {
   store.commit('mycaseModule/changeCaseinfo', row)
   router.push('/main/caseinfo')

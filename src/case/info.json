@@ -1,0 +1,36 @@
+[
+  {
+    "type":"indexedDB",
+    "name": "goDB",
+    "caseCode": "/src/case/goDB/index.vue",
+    "cpnCodes": [
+      {
+        "name": "index.js",
+        "url": "@/case/goDB/index.js"
+      },
+      {
+        "name": "index.vue",
+        "url": "@/case/goDB/index.vue"
+      }
+    ]
+  },
+  {
+    "name":"indexedDB",
+    "type": "indexedDB",
+    "caseCode": "/src/case/indexedDB/index.vue",
+    "cpnCodes": [
+      {
+        "name": "index.vue",
+        "url": "@/case/indexedDB/index.vue"
+      },
+      {
+        "name": "index.js",
+        "url": "@/case/indexedDB/index.js"
+      },
+      {
+        "name": "init.js",
+        "url": "@/case/indexedDB/init.js"
+      }
+    ]
+  }
+]

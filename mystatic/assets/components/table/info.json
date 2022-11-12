@@ -1,0 +1,26 @@
+{
+  "name": "yhTable",
+  "label": "表格组件",
+  "attr": [
+    "title：（字符串，默认值：''），表格标题",
+    "listData：（数组，必填），表格数据",
+    "listCount：（数字，0），数据总数，用作分页",
+    "propList：（数组，必填）表格列",
+    "showIndexColumn：（布尔值,默认值：false），显示序号列",
+    "showSelectColumn：（布尔值,默认值：false），显示选择框",
+    "page：（对象，默认值：{ currentPage: 0, pageSize: 10 }）分页数据。",
+    "childrenProps：（对象，默认值：{}）",
+    "showFooter：（布尔值,默认值：true），显示底部"
+  ],
+  "info": "表格组件。",
+  "methods": [
+    "selectionChange：选择项发生变化，所选中的值",
+    "update:page：分页先关数据改变"
+  ],
+  "slots": [
+    "headerHandler：头部操作区",
+    "依据当前的slotName，列表的插槽",
+    "footer：底部操作区"
+  ],
+  "blog": null
+}
