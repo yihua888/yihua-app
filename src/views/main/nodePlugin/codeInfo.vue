@@ -15,7 +15,7 @@
 
 <script setup>
 import codeMirror from '@/components/codeMirror/index.vue'
-import { computed, ref } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 import { useStore } from 'vuex';
 import router from '@/router'
 import { CopyDocument } from '@element-plus/icons-vue'
@@ -39,11 +39,12 @@ const nodeCodeInfo = computed(() => {
         info = getCache("nodeCodeInfo")
         store.commit('nodeCodeModule/changeNodeCodeInfo', info)
     }
-    console.log(info);
-    changeCode(info.codeUrl)
     return info
 })
 
+watchEffect(()=>{
+    changeCode(nodeCodeInfo.value.codeUrl)
+})
 const goback = () => router.go(-1)
 
 const copyCode = () => {
