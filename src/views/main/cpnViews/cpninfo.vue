@@ -59,6 +59,7 @@
       </div>
       </div>
     </div>
+    <el-backtop target=".cpn-info .cpn-content" :right="60" :bottom="60"></el-backtop>
   </div>
 </template>
 
