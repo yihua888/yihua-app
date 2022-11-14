@@ -8,14 +8,16 @@ const routes = [
     component: () => import("@/views/login/index.vue"),
   },
   {
-    path: "/",
-    redirct: "/main" 
-  },
-  {
     path: "/main",
     name: "main",
     component: () => import("@/views/main/index.vue"),
   },
+  {
+    name:"NotFont",
+    path: '/:pathMatch(.*)*',
+    component: () => import('@/views/NotFont/index.vue'),
+    alias:'/404'
+  }
 ];
 
 const router = createRouter({
@@ -24,6 +26,14 @@ const router = createRouter({
 });
 
 router.beforeEach((to) => {
+  if (to.path === '/') {
+    return '/main/dashboard'
+  }
+
+  if(to.path === '/main'){
+    return '/main/dashboard'
+  }
+
   if (to.path !== "/login") {
     const token = getCache("token");
     //  判断是否存在token
