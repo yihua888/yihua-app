@@ -12,5 +12,15 @@
   ],
   "info": "svgIcon使用组件",
   "methods": [],
-  "blog": "https://blog.csdn.net/weixin_45737062/article/details/125330776?spm=1001.2014.3001.5502"
+  "blog": "https://blog.csdn.net/weixin_45737062/article/details/125330776?spm=1001.2014.3001.5502",
+  "cpnCodes": [
+    {
+      "name": "test.vue",
+      "url": "/components/svgIcon/test.vue"
+    },
+    {
+      "name": "index.vue",
+      "url": "/components/svgIcon/index.vue"
+    }
+  ]
 }

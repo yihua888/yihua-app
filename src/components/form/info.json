@@ -16,5 +16,15 @@
     "header：在表单上方的位置；",
     "footer：在表单下方的位置。"
   ],
-  "blog": null
+  "blog": null,
+  "cpnCodes": [
+    {
+      "name": "test.vue",
+      "url": "/components/form/test.vue"
+    },
+    {
+      "name": "index.vue",
+      "url": "/components/form/index.vue"
+    }
+  ]
 }

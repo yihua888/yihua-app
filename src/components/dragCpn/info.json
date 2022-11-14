@@ -28,5 +28,23 @@
   "slots":[
    "content：参数是当前节点的数据。"
   ],
-  "blog":"https://blog.csdn.net/weixin_45737062/article/details/127512928?spm=1001.2014.3001.5501"
+  "blog":"https://blog.csdn.net/weixin_45737062/article/details/127512928?spm=1001.2014.3001.5501",
+  "cpnCodes": [
+    {
+      "name": "test.vue",
+      "url": "/components/dragCpn/test.vue"
+    },
+    {
+      "name": "index.vue",
+      "url": "/components/dragCpn/index.vue"
+    },
+    {
+      "name": "yhdrag.vue",
+      "url": "/components/dragCpn/yhdrag.vue"
+    },
+    {
+      "name": "yhdragItem.vue",
+      "url": "/components/dragCpn/yhdragItem.vue"
+    }
+  ]
 }

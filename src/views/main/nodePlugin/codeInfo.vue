@@ -3,29 +3,31 @@
         <div class="top">
             <span>{{ nodeCodeInfo.name }}</span>
             <span>
-                <el-button type="success" :icon="CopyDocument" circle @click="copyCode" />
                 <el-button size="small" @click="goback">返回</el-button>
             </span>
         </div>
-        <div class="code-content">
-            <codeMirror :code="codeStr" :height="700"></codeMirror>
+        <div class="code-content" v-for="codeItem in codeArr" :key="codeItem.fileName">
+            <div class="copy-box">
+                <el-button type="success" :icon="CopyDocument" circle @click="copyStr(codeItem.codeStr)" />
+            </div>
+            <codeMirror :code="codeItem.codeStr" :height="700"></codeMirror>
         </div>
     </div>
 </template>
 
 <script setup>
-import codeMirror from '@/components/codeMirror/index.vue'
 import { computed, ref, watchEffect } from 'vue'
 import { useStore } from 'vuex';
 import router from '@/router'
 import { CopyDocument } from '@element-plus/icons-vue'
-import { ElMessage } from "element-plus";
+import codeMirror from '@/components/codeMirror/index.vue'
 import { getCache } from "@/utils/cache";
 import { getFile } from '@/serve/getFile.js'
+import {useCodeArr} from '@/hooks/useCodeArr.js'
+import { copyStr } from '@/utils/copy'
 
 const store = useStore()
 
-const codeStr = ref("")
 const changeCode = (url) => {
     getFile(`/self${url}`).then(res => {
         codeStr.value = res
@@ -42,21 +44,9 @@ const nodeCodeInfo = computed(() => {
     return info
 })
 
-watchEffect(()=>{
-    changeCode(nodeCodeInfo.value.codeUrl)
-})
-const goback = () => router.go(-1)
+const codeArr = useCodeArr(nodeCodeInfo.value.codeUrl)
 
-const copyCode = () => {
-    const data = codeStr.value
-    let inputElement = document.createElement("input");
-    inputElement.value = data;
-    document.body.appendChild(inputElement);
-    inputElement.select(); //选中文本
-    document.execCommand("copy"); //执行浏览器复制命令
-    inputElement.remove();
-    ElMessage.success("复制成功");
-};
+const goback = () => router.go(-1)
 </script>
 
   
@@ -79,6 +69,10 @@ const copyCode = () => {
     .code-content {
         flex: 1;
         overflow: auto;
+    }
+    .copy-box{
+        text-align: end;
+        margin : 24px;
     }
 }
 

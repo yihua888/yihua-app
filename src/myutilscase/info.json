@@ -5,7 +5,7 @@
     "cpnCodes": [
       {
         "name": "index.vue",
-        "url": "/src/myutilscase/ExcelToJson/index.vue"
+        "url": "/myutilscase/ExcelToJson/index.vue"
       }
     ]
   },
@@ -15,7 +15,7 @@
     "cpnCodes": [
       {
         "name": "index.vue",
-        "url": "/src/myutilscase/jsonToExcel/index.vue"
+        "url": "/myutilscase/jsonToExcel/index.vue"
       }
     ]
   }

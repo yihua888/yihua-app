@@ -18,53 +18,6 @@ import { ElMessage } from "element-plus";
 import { ref } from "vue";
 import * as XLSX from "xlsx";
 
-const downloadExcel = (el: Element, fileName: string) => {
-    const thead = el.querySelector(".el-table__header-wrapper thead")?.innerHTML;
-    const tbody = el.querySelector(".el-table__body-wrapper tbody")?.innerHTML;
-    let html = `<table border>
-                  <thead>
-                    ${thead}
-                  </thead>
-                  <tbody>
-                    ${tbody}
-                  </tbody>
-                </table>`;
-    html = `<html xmlns:x="urn:schemas-microsoft-com:office:excel">
-            <head>
-            <xml>
-              <x:ExcelWorkbook>
-              <x:ExcelWorksheets>
-                <x:ExcelWorksheet>
-                <x:WorksheetOptions>
-                  <x:Print><x:ValidPrinterInfo /></x:Print>
-                </x:WorksheetOptions>
-                </x:ExcelWorksheet>
-              </x:ExcelWorksheets>
-              </x:ExcelWorkbook>
-            </xml>
-            </head>
-            <style>
-            table{vnd.ms-excel.numberformat:@;}
-            th,td{
-              text-align: center;
-            }
-            .left{
-              text-align: left;
-            }
-            </style>
-            ${html}
-            </html>
-          `;
-    let excelBlob = new Blob([html], { type: "application/vnd.ms-excel" });
-    let link = document.createElement("a");
-    link.style.display = "none";
-    link.href = URL.createObjectURL(excelBlob);
-    link.setAttribute("download", fileName);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-};
-
 const inputFile = ref<HTMLInputElement | null>(null);
 const importFile = () => {
     if (inputFile.value) {

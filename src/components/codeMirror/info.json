@@ -14,5 +14,15 @@
     "blur：失去焦点的回调。"
   ],
   "slots":[],
-  "blog": null
+  "blog": null,
+  "cpnCodes": [
+    {
+      "name": "index.vue",
+      "url": "/components/codeMirror/index.vue"
+    },
+    {
+      "name": "test.vue",
+      "url": "/components/codeMirror/test.vue"
+    }
+  ]
 }

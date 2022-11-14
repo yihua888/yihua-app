@@ -12,5 +12,15 @@
     "saveTag：获取标签对应的字符串。"
   ],
   "slots":[],
-  "blog": "https://blog.csdn.net/weixin_45737062/article/details/120873806?spm=1001.2014.3001.5501"
+  "blog": "https://blog.csdn.net/weixin_45737062/article/details/120873806?spm=1001.2014.3001.5501",
+  "cpnCodes": [
+    {
+      "name": "test.vue",
+      "url": "/components/labelInput/test.vue"
+    },
+    {
+      "name": "index.vue",
+      "url": "/components/labelInput/index.vue"
+    }
+  ]
 }

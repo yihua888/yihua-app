@@ -43,6 +43,20 @@
               v-for="item in cpnInfo.slots"
               :key="item">{{ item }}</li>
         </div>
+      <div class="info-text">
+        代码区：
+      </div>
+      <div v-for="codeItem in codeArr"
+           :key="codeItem.fileName">
+        <div class="copy-box">
+          <span>文件名：{{codeItem.fileName}}</span>
+          <span>
+            <el-button type="success" :icon="CopyDocument" circle @click="copyStr(codeItem.codeStr)" />
+          </span>
+        </div>
+        <codeMirror :code="codeItem.codeStr"
+                    :height="700"></codeMirror>
+      </div>
       </div>
     </div>
   </div>
@@ -52,7 +66,11 @@
 import { computed , defineAsyncComponent , ref} from 'vue'
 import { useStore } from 'vuex';
 import router from '@/router'
+import { CopyDocument } from '@element-plus/icons-vue'
+import codeMirror from '@/components/codeMirror/index.vue'
 import { getCache } from "@/utils/cache";
+import { useCodeArr } from '@/hooks/useCodeArr.js'
+import { copyStr } from '@/utils/copy'
 
 const cpnInstance = ref('')
 const store = useStore()
@@ -66,6 +84,7 @@ const cpnInfo = computed(() => {
   return info
 })
 
+const codeArr = useCodeArr(cpnInfo.value.cpnCodes)
 const goback = () => router.go(-1)
 </script>
 
@@ -97,6 +116,11 @@ const goback = () => router.go(-1)
     align-items: center;
     height: 100%;
   }
+   .copy-box{
+      display: flex;
+      justify-content: space-between;
+      margin: 24px;
+    }
 }
 
 .content {

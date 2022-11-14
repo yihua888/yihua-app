@@ -22,5 +22,15 @@
     "依据当前的slotName，列表的插槽",
     "footer：底部操作区"
   ],
-  "blog": null
+  "blog": null,
+  "cpnCodes": [
+    {
+      "name": "test.vue",
+      "url": "/components/table/test.vue"
+    },
+    {
+      "name": "index.vue",
+      "url": "/components/table/index.vue"
+    }
+  ]
 }
