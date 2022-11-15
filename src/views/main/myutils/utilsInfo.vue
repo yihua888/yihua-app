@@ -20,8 +20,7 @@
             <el-button type="success" :icon="CopyDocument" circle @click="copyStr(codeItem.codeStr)" />
           </span>
         </div>
-        <codeMirror :code="codeItem.codeStr"
-                    :height="700"></codeMirror>
+        <codeMirror :code="codeItem.codeStr"></codeMirror>
       </div>
     </div>
   </div>
