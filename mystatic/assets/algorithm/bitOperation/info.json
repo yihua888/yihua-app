@@ -8,7 +8,7 @@
         "codeUrl": [
           {
             "name": "hammingWeight.js",
-            "url": "/bitOperation/hammingWeight.js"
+            "url": "/algorithm/bitOperation/hammingWeight.js"
           }
         ],
         "info": "二进制中1的个数"
@@ -19,7 +19,7 @@
         "codeUrl": [
           {
             "name": "singleNumber.js",
-            "url": "/bitOperation/singleNumber.js"
+            "url": "/algorithm/bitOperation/singleNumber.js"
           }
         ],
         "info": "给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素"
@@ -30,7 +30,7 @@
         "codeUrl": [
           {
             "name": "countBits.js",
-            "url": "/bitOperation/countBits.js"
+            "url": "/algorithm/bitOperation/countBits.js"
           }
         ],
         "info": "给定一个非负整数 num。对于 0 ≤ i ≤ num 范围中的每个数字 i ，计算其二进制数中的 1 的数目并将它们作为数组返回"
@@ -41,7 +41,7 @@
         "codeUrl": [
           {
             "name": "threeSum.js",
-            "url": "/bitOperation/threeSum.js"
+            "url": "/algorithm/bitOperation/threeSum.js"
           }
         ],
         "info": "给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。注意：答案中不可以包含重复的三元组。"
@@ -52,7 +52,7 @@
         "codeUrl": [
           {
             "name": "maxArea.js",
-            "url": "/bitOperation/maxArea.js"
+            "url": "/algorithm/bitOperation/maxArea.js"
           }
         ],
         "info": "盛最多水的容器"
@@ -63,7 +63,7 @@
         "codeUrl": [
           {
             "name": "trap.js",
-            "url": "/bitOperation/trap.js"
+            "url": "/algorithm/bitOperation/trap.js"
           }
         ],
         "info": "接雨水"
@@ -74,7 +74,7 @@
         "codeUrl": [
           {
             "name": "minSubArrayLen.js",
-            "url": "/bitOperation/minSubArrayLen.js"
+            "url": "/algorithm/bitOperation/minSubArrayLen.js"
           }
         ],
         "info": "给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组，并返回其长度。如果不存在符合条件的连续子数组，返回 0。"

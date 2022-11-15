@@ -112,7 +112,14 @@
               "type": 2,
               "id": "1-6",
               "icon": "Notebook",
-              "children": []
+              "children": [
+                {
+                  "url": "/main/algorithmInfo",
+                  "name": "algorithmInfo",
+                  "type": 3,
+                  "id": "1-6-1"
+                }
+              ]
             },
             {
               "url": "/main/nodePlugin",

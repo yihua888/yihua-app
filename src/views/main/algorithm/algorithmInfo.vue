@@ -1,17 +1,21 @@
 <template>
-    <div class="code-info">
+    <div class="algorithm-info">
         <div class="top">
-            <span>{{ nodeCodeInfo.name }}</span>
+            <span>{{ algorithmInfo.name }}</span>
             <span>
                 <el-button type="primary" size="small" @click="goback">返回</el-button>
             </span>
         </div>
+        <div class="title">
+           <span class="f-bold">题目：</span> {{ algorithmInfo.info }}
+        </div>
         <div class="code-content">
             <div v-for="codeItem in codeArr" :key="codeItem.fileName">
                 <div class="copy-box">
+                    <span>{{ codeItem.fileName }}</span>
                     <el-button type="success" :icon="CopyDocument" circle @click="copyStr(codeItem.codeStr)" />
                 </div>
-                <codeMirror :code="codeItem.codeStr" :height="700"></codeMirror>
+                <codeMirror :code="codeItem.codeStr" ></codeMirror>
             </div>
         </div>
     </div>
@@ -37,23 +41,24 @@ const changeCode = (url) => {
         console.log(err);
     })
 }
-const nodeCodeInfo = computed(() => {
-    let info = store.state.nodeCodeModule.nodeCodeInfo
+const algorithmInfo = computed(() => {
+    let info = store.state.algorithmModule.algorithmInfo
     if (!info.name) {
-        info = getCache("nodeCodeInfo")
-        store.commit('nodeCodeModule/changeNodeCodeInfo', info)
+        info = getCache("algorithmInfo")
+        store.commit('algorithmModule/changeAlgorithmInfo', info)
     }
     return info
 })
 
-const codeArr = useCodeArr(nodeCodeInfo.value.codeUrl)
+console.log(algorithmInfo.value);
+const codeArr = useCodeArr(algorithmInfo.value.codeUrl)
 
 const goback = () => router.go(-1)
 </script>
 
   
 <style scoped lang="scss">
-.code-info {
+.algorithm-info {
     text-align: left;
     line-height: 30px;
     display: flex;
@@ -68,12 +73,18 @@ const goback = () => router.go(-1)
         justify-content: space-between;
     }
 
+    .title{
+        border-bottom: 1px #ccc dashed ;
+        padding-bottom: 24px;
+    }
+
     .code-content {
         flex: 1;
         overflow: auto;
     }
     .copy-box{
-        text-align: end;
+        display: flex;
+        justify-content: space-between;
         margin : 24px;
     }
 }

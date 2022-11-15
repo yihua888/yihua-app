@@ -5,6 +5,7 @@ import cpnModule from './cpnviews'
 import mycaseModule from './mycase'
 import myutilsModule from './myutils'
 import nodeCodeModule from './nodeCodeInfo'
+import algorithmModule from './algorithmInfo'
 
 const store = createStore({
   state() {},
@@ -16,8 +17,8 @@ const store = createStore({
     mycaseModule,
     myutilsModule,
     nodeCodeModule,
-    login
-  }
+    algorithmModule,
+  login}
 })
 
 export function setupStore () {

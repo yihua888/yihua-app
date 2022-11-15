@@ -8,7 +8,7 @@
       "codeUrl": [
         {
           "name": "al.js",
-          "url": "/base/al.js"
+          "url": "/algorithm/base/al.js"
         }
       ],
       "info": "阿里面试"
@@ -19,7 +19,7 @@
       "codeUrl": [
         {
           "name": "hw.js",
-          "url": "/base/hw.js"
+          "url": "/algorithm/base/hw.js"
         }
       ],
       "info": "华为面试"
@@ -30,7 +30,7 @@
       "codeUrl": [
         {
           "name": "index.js",
-          "url": "/base/index.js"
+          "url": "/algorithm/base/index.js"
         }
       ],
       "info": "普通题"

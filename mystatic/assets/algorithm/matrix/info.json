@@ -8,7 +8,7 @@
       "codeUrl": [
         {
           "name": "spiralOrder.js",
-          "url": "/matrix/spiralOrder.js"
+          "url": "/algorithm/matrix/spiralOrder.js"
         }
       ],
       "info": "矩阵旋转"
@@ -19,7 +19,7 @@
       "codeUrl": [
         {
           "name": "printMatrix.js",
-          "url": "/matrix/printMatrix.js"
+          "url": "/algorithm/matrix/printMatrix.js"
         }
       ],
       "info": "顺时针打印矩阵"

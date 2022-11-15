@@ -1,7 +1,7 @@
 <template>
     <basePage v-bind="config" :tableData="utilslist">
         <template #handler="{ row }">
-            <el-button type="primary" @click="showUtils(row)">查看</el-button>
+            <el-button  @click="showUtils(row)">查看</el-button>
         </template>
     </basePage>
 </template>

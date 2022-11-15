@@ -10,7 +10,7 @@
 import { useStore } from 'vuex'
 import router from "@/router";
 import basePage from '@/highCpn/basePage/index.vue'
-import nodelist from '@plugin/info.json'
+import nodelist from '@static/plugin/info.json'
 import config from  './mycase.config'
 
 const store = useStore()

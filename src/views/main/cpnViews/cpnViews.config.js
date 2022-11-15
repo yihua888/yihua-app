@@ -33,7 +33,7 @@ export default {
       prop: 'info', label: '说明', minWidth: '100'
     },
     {
-      label: '操作', minWidth: '100',  slotName: 'handler'
+      label: '操作', minWidth: '100',  slotName: 'handler',   align: 'center'
     }
   ]
 }

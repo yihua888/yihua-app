@@ -1,7 +1,7 @@
 <template>
   <codemirror v-model="code"
               :placeholder="placeholder"
-              :style="{ height: `${height}px`, width:'100%' }"
+              :style="{ height: cHeight, width:'100%' }"
               :autofocus="true"
               :indent-with-tab="true"
               :tabSize="2"
@@ -13,8 +13,7 @@
 </template>
   
 <script setup>
-import { defineProps, defineEmits } from "vue";
-
+import { defineProps, defineEmits, computed } from "vue";
 import { Codemirror } from "vue-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { oneDark } from "@codemirror/theme-one-dark";
@@ -25,8 +24,8 @@ const prop = defineProps({
     default: () => ''
   },
   height: {
-    type: Number,
-    default: () => 400
+    type: Number || String,
+    default: () => 'auto'
   },
   placeholder:{
     type:String,
@@ -35,6 +34,12 @@ const prop = defineProps({
 })
 
 const emit = defineEmits(['ready', 'focus', 'change', 'blur'])
+const cHeight = computed(()=>{
+  if(typeof prop.height === 'number'){
+    return `${prop.height}px`
+  }
+  return prop.height
+})
 
 const extensions = [javascript(), oneDark];
 

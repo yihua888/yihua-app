@@ -11,7 +11,7 @@
       </yh-form>
     </div>
     <div class="content">
-      <yh-table :listData="listData" :propList="tableCol" :showFooter="false">
+      <yh-table :listData="listData" :propList="tableCol" :showFooter="false" v-bind="tableConfig" :showIndexColumn="true">
         <template v-for="item in tableSlots" :key="item.prop" #[item.slotName]="scope">
           <template v-if="item.slotName">
             <slot :name="item.slotName" :row="scope.row"></slot>
@@ -42,6 +42,10 @@ const props = defineProps({
   tableCol: {
     type: Array,
     required: true
+  },
+  tableConfig:{
+     type: Object,
+     default: () => {}
   }
 })
 
