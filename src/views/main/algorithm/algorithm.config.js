@@ -5,7 +5,7 @@ export default {
       padding: '10px 40px'
     },
     colLayout: {
-      span: 12
+      span: 6
     },
     formItems: [
       {

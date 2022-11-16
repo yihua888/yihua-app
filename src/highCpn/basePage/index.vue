@@ -11,7 +11,8 @@
       </yh-form>
     </div>
     <div class="content">
-      <yh-table :listData="listData" :propList="tableCol" :showFooter="false" v-bind="tableConfig" :showIndexColumn="true">
+      <yh-table :listData="listData" :propList="tableCol" :showFooter="false" v-bind="tableConfig"
+        :showIndexColumn="true">
         <template v-for="item in tableSlots" :key="item.prop" #[item.slotName]="scope">
           <template v-if="item.slotName">
             <slot :name="item.slotName" :row="scope.row"></slot>
@@ -43,9 +44,9 @@ const props = defineProps({
     type: Array,
     required: true
   },
-  tableConfig:{
-     type: Object,
-     default: () => {}
+  tableConfig: {
+    type: Object,
+    default: () => { }
   }
 })
 
@@ -59,7 +60,7 @@ const formData = ref(formOriginData)
 const listData = ref(props.tableData)
 
 // 插槽绑定
-const tableSlots = props.tableCol.filter(item=>item.slotName)
+const tableSlots = props.tableCol.filter(item => item.slotName)
 
 // 重置
 const handleResetClick = () => {
@@ -72,7 +73,7 @@ const handleQueryClick = () => {
     const keys = Object.keys(formData.value)
     let flag = true
     keys.some(key => {
-      flag = item[key].includes(formData.value[key])   || formData.value[key].trim() === ''
+      flag = item[key].includes(formData.value[key]) || formData.value[key].trim() === ''
       if (!flag) {
         return true
       }
@@ -82,12 +83,27 @@ const handleQueryClick = () => {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header {
   color: rgb(12, 11, 11);
 }
+
 .handle-btns {
   text-align: right;
   padding: 0 50px 20px 0;
+}
+
+.content{
+  .yh-table{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    ::v-deep .el-table{
+      flex: 1;
+      ::v-deep .el-table__body-wrapper{
+        overflow: auto;
+      }
+    }
+  }
 }
 </style>
