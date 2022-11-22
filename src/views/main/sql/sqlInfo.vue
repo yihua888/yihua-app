@@ -1,6 +1,7 @@
 <template>
     <div class="code-info">
         <div class="top">
+            <span></span>
             <span>
                 <el-button type="primary" size="small" @click="goback">返回</el-button>
             </span>
@@ -10,7 +11,7 @@
                 <div class="copy-box">
                     <el-button type="success" :icon="CopyDocument" circle @click="copyStr(codeItem.codeStr)" />
                 </div>
-                <codeMirror :code="codeItem.codeStr" lang="sql"></codeMirror>
+                <codeMirror :code="codeItem.codeStr" ></codeMirror>
             </div>
         </div>
     </div>

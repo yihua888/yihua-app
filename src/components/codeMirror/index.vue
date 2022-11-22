@@ -16,7 +16,7 @@
 import { defineProps, defineEmits, computed } from "vue";
 import { Codemirror } from "vue-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
-import { MySQL } from "@codemirror/lang-sql";
+// import { sql } from "@codemirror/lang-sql";
 import { oneDark } from "@codemirror/theme-one-dark";
 
 const prop = defineProps({
@@ -48,7 +48,7 @@ const cHeight = computed(()=>{
 
 const  getLang = () => {
   if(prop.lang === 'javascript') return [javascript(), oneDark]
-  if(prop.lang === 'sql') return [MySQL(), oneDark]
+  // if(prop.lang === 'sql') return [sql(), oneDark]
 }
 const extensions = getLang();
 
