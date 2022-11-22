@@ -11,7 +11,7 @@
                 <div class="copy-box">
                     <el-button type="success" :icon="CopyDocument" circle @click="copyStr(codeItem.codeStr)" />
                 </div>
-                <codeMirror :code="codeItem.codeStr" ></codeMirror>
+                <codeMirror :code="codeItem.codeStr" lang="sql"></codeMirror>
             </div>
         </div>
     </div>
