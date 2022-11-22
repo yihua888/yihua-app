@@ -16,6 +16,7 @@
 import { defineProps, defineEmits, computed } from "vue";
 import { Codemirror } from "vue-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
+import { MySQL } from "@codemirror/lang-sql";
 import { oneDark } from "@codemirror/theme-one-dark";
 
 const prop = defineProps({
@@ -30,6 +31,10 @@ const prop = defineProps({
   placeholder:{
     type:String,
     default:() => ''
+  },
+  lang:{
+    type:String,
+    default:()=>'javascript'
   }
 })
 
@@ -41,7 +46,11 @@ const cHeight = computed(()=>{
   return prop.height
 })
 
-const extensions = [javascript(), oneDark];
+const  getLang = () => {
+  if(prop.lang === 'javascript') return [javascript(), oneDark]
+  if(prop.lang === 'sql') return [MySQL(), oneDark]
+}
+const extensions = getLang();
 
 const ready = (e) => emit('ready', e, prop.code)
 const change = (e) => emit('change', e, prop.code)

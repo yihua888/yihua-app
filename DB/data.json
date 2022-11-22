@@ -135,6 +135,21 @@
                   "id": "1-7-1"
                 }
               ]
+            },
+            {
+              "url": "/main/sql",
+              "name": "sql",
+              "type": 2,
+              "id": "1-8",
+              "icon": "Coin",
+              "children": [
+                {
+                  "url": "/main/sqlInfo",
+                  "name": "sqlInfo",
+                  "type": 3,
+                  "id": "1-8-1"
+                }
+              ]
             }
           ]
         }

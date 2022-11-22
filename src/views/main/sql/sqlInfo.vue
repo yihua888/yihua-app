@@ -1,7 +1,6 @@
 <template>
     <div class="code-info">
         <div class="top">
-            <span>{{ nodeCodeInfo.name }}</span>
             <span>
                 <el-button type="primary" size="small" @click="goback">返回</el-button>
             </span>
@@ -11,35 +10,23 @@
                 <div class="copy-box">
                     <el-button type="success" :icon="CopyDocument" circle @click="copyStr(codeItem.codeStr)" />
                 </div>
-                <codeMirror :code="codeItem.codeStr"></codeMirror>
+                <codeMirror :code="codeItem.codeStr" lang="sql"></codeMirror>
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { computed, ref, watchEffect } from 'vue'
-import { useStore } from 'vuex';
+import {  ref } from 'vue'
 import router from '@/router'
 import { CopyDocument } from '@element-plus/icons-vue'
 import codeMirror from '@/components/codeMirror/index.vue'
-import { getCache } from "@/utils/cache";
+import { getFile } from '@/serve/getFile.js'
 import {useCodeArr} from '@/hooks/useCodeArr.js'
 import { copyStr } from '@/utils/copy'
 
-const store = useStore()
-
-const nodeCodeInfo = computed(() => {
-    let info = store.state.nodeCodeModule.nodeCodeInfo
-    if (!info.name) {
-        info = getCache("nodeCodeInfo")
-        store.commit('nodeCodeModule/changeNodeCodeInfo', info)
-    }
-    return info
-})
-
-const codeArr = useCodeArr(nodeCodeInfo.value.codeUrl)
-
+const codeStr =  ref('')
+const codeArr = useCodeArr(router.currentRoute.value.query?.codeUrl)
 const goback = () => router.go(-1)
 </script>
 

@@ -8,10 +8,11 @@
     "build": "vite build",
     "preview": "vite preview",
     "json-server": "json-server DB/data.json --watch",
-    "static":"cd ./mystatic && node app.js"
+    "static": "cd ./mystatic && node app.js"
   },
   "dependencies": {
     "@codemirror/lang-javascript": "^6.1.1",
+    "@codemirror/lang-sql": "^6.3.3",
     "@codemirror/theme-one-dark": "^6.1.0",
     "axios": "^1.1.3",
     "element-plus": "^2.2.20",
