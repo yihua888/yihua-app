@@ -32,5 +32,20 @@
         "url": "/case/indexedDB/init.js"
       }
     ]
+  },
+  {
+    "type": "handleImg",
+    "name": "squared",
+    "caseCode": "/src/case/squared/index.vue",
+    "cpnCodes": [
+      {
+        "name": "index.js",
+        "url": "/case/squared/index.js"
+      },
+      {
+        "name": "index.vue",
+        "url": "/case/squared/index.vue"
+      }
+    ]
   }
 ]
