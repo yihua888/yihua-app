@@ -1,0 +1,30 @@
+{
+  "name": "yhDragTabs",
+  "label": "可拖拽tabs组件",
+  "attr": [
+    "tabList：数据，必填；数组；",
+    "modelKey：tab绑定选中值，必填，字符串；",
+    "label：tab显示值，必填，字符串；",
+    "groupName：拖拽分组，必填，字符串。"
+  ],
+  "info": "可拖拽tabs组件。",
+  "methods": [
+    "changeList：改变数据",
+    "changeActive：改变选中tab；"
+  ],
+  "slots":[
+   "head：头部内容当前选中的tab所带数据及index",
+   "默认插槽：当前选中的tab所带数据"
+  ],
+  "blog":"https://blog.csdn.net/weixin_45737062/article/details/128040854?spm=1001.2014.3001.5501",
+  "cpnCodes": [
+    {
+      "name": "test.vue",
+      "url": "/components/dragTabs/test.vue"
+    },
+    {
+      "name": "index.vue",
+      "url": "/components/dragTabs/index.vue"
+    }
+  ]
+}

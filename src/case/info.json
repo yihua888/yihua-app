@@ -34,7 +34,7 @@
     ]
   },
   {
-    "type": "handleImg",
+    "type": "canvas",
     "name": "squared",
     "caseCode": "/src/case/squared/index.vue",
     "cpnCodes": [
